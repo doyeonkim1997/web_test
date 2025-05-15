@@ -39,3 +39,34 @@ const movieDetails = {
   4. 텍스트 내용 채우기
   5. 스타일 클래스 추가하기 (부트스트랩 사용의 경우)
   6. 리스트에 붙이기 (하나씩 차례대로 붙는 개념)
+
+
+//
+
+🎯 실습 미션: 할 일 목록 만들기 (To-do List)
+🧾 목표: 배열에 있는 할 일 목록을 화면에 출력한다
+각 항목 옆에 "삭제" 버튼을 추가한다
+버튼을 누르면 해당 할 일이 사라진다
+
+const todoList = [
+  "공부하기",
+  "운동하기",
+  "물 많이 마시기",
+  "자바스크립트 복습하기",
+  "산책 다녀오기"
+];
+
+const todoListElement = document.getElementById("todoList");
+  for (let i = 0; i < todoList.length; i++) {
+    const listItem = document.createElement("li");
+    listItem.textContent = `${i + 1}. ${todoList[i]}`;
+    todoListElement.appendChild(listItem);
+  }
+
+const deleteBtn = document.createElement("button");
+deleteBtn.textContent = "삭제";
+listItem.appendChild(deleteBtn);
+
+deleteBtn.addEventListener("click", function () {
+  listItem.remove();
+}); 
